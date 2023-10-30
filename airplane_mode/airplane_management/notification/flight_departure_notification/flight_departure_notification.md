@@ -1,0 +1,1 @@
+Your flight will be departure on {{ date_of_departure }}
