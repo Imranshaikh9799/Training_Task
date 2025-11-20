@@ -1,0 +1,19 @@
+name: CI Pipeline
+
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+
+jobs:
+  approve:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Approve commit (print)
+        run: echo "Commit ${GITHUB_SHA} approved by CI"
+        env:
+          GITHUB_SHA: ${{ github.sha }}
